@@ -1,0 +1,17 @@
+from "generics/interfaces.ato" import Power
+from "esp32-s3/elec/src/esp32-s3.ato" import ESP32S3
+from "ams1117-33/elec/src/ams1117-33.ato" import AMS111733
+from "usb-connectors/usb-connectors.ato" import USBCConn
+
+module Esp32s3:
+    power3v3 = new Power
+    power5v = new Power
+    micro = new ESP32S3
+    ldo = new AMS111733
+    usbc = new USBCConn
+
+    usbc.power ~ power5v
+    ldo.power_in ~ power5v
+    power3v3 ~ ldo.power_out
+    micro.power ~ power3v3
+    usbc.usb2 ~ micro.usb2

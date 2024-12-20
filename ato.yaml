@@ -2,5 +2,22 @@ ato-version: ^0.2.0
 builds:
   default:
     entry: elec/src/izzybots.ato:Izzybots
+  brain:
+    entry: elec/src/esp32s3.ato:Esp32s3
 dependencies:
-- generics
+- name: generics
+  version_spec: '@93de318f38c5acb079fb5cfc9d5a06dc5f02b157'
+  link_broken: true
+  path: elec/src/generics
+- name: esp32-s3
+  version_spec: '@75e753784c9e896841417f2e0486dc0308146a6c'
+  link_broken: true
+  path: elec/src/esp32-s3
+- name: ams1117-33
+  version_spec:
+  link_broken: true
+  path: elec/src/ams1117-33
+- name: usb-connectors
+  version_spec: '@1be66943895494857495c3afe24389a895b9fac8'
+  link_broken: true
+  path: elec/src/usb-connectors
